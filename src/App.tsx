@@ -1,12 +1,11 @@
-import { ContainerPrincipal, EstiloGlobal } from './style'
+import PaginaDeLogin from './containers/PaginaDeLogin'
+import { EstiloGlobal } from './style'
 
 function App() {
   return (
     <>
       <EstiloGlobal />
-      <ContainerPrincipal>
-        <h1>ola mundo</h1>
-      </ContainerPrincipal>
+      <PaginaDeLogin />
     </>
   )
 }
