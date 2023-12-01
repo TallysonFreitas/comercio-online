@@ -14,13 +14,15 @@ export const SCardLogin = styled.div`
 
 export const SInputLogin = styled.input`
   background-color: #f5f5f5;
-  padding: 16px 8px;
+  padding: 12px 8px;
   width: 100%;
   color: #999999;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
+`
 
-  &:focus {
-    border: #777777;
-  }
+export const SFormularioLogin = styled.form`
+  max-width: 600px;
+  width: 100%;
 `
