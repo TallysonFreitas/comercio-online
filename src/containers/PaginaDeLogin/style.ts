@@ -10,19 +10,53 @@ export const SCardLogin = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 40px;
 `
 
 export const SInputLogin = styled.input`
   background-color: #f5f5f5;
-  padding: 12px 8px;
+  padding: 12px 8px 12px;
   width: 100%;
   color: #999999;
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  outline-color: transparent;
 `
 
 export const SFormularioLogin = styled.form`
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+`
+
+export const SLabelLogin = styled.label`
+  position: relative;
+  margin: auto;
+  top: 0px;
+  left: 8px;
+  pointer-events: none;
+`
+
+export const SButtonLogin = styled.button`
+  width: 50%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(15deg, #13547a 0%, #4dadad 100%);
+  color: #ffffff;
+  margin-top: 24px;
+`
+
+export const STitulo = styled.h2``
+
+export const SImagemLogo = styled.img`
+  height: 160px;
+  width: 160px;
 `
