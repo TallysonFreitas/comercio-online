@@ -11,7 +11,7 @@ import {
 import { adicionarUser } from '../../store/reducers/user'
 import { useState } from 'react'
 
-const PaginaDeLogin = () => {
+const PaginaDeCadastro = () => {
   const dispatch = useDispatch()
 
   const [usuario, setUsuario] = useState({ username: '', password: '' })
@@ -23,7 +23,7 @@ const PaginaDeLogin = () => {
   return (
     <ContainerPadrao>
       <SCardLogin>
-        <STitulo>Login</STitulo>
+        <STitulo>Cadastro</STitulo>
         <SFormularioLogin>
           <SLabelLogin>Username</SLabelLogin>
           <SInputLogin
@@ -59,4 +59,4 @@ const PaginaDeLogin = () => {
   )
 }
 
-export default PaginaDeLogin
+export default PaginaDeCadastro
