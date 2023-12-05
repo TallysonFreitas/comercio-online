@@ -45,6 +45,7 @@ const PaginaDeCadastro = () => {
               setUsuario({ ...usuario, password: e.target.value })
             }}
           />
+          <a href="#">já possui uma conta?</a>
           <SButtonLogin
             type="button"
             onClick={() => {
