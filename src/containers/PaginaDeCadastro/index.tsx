@@ -1,61 +1,22 @@
-import { useDispatch } from 'react-redux'
-import { ContainerPadrao } from '../../style'
-import {
-  SButtonLogin,
-  SCardLogin,
-  SFormularioLogin,
-  SInputLogin,
-  SLabelLogin,
-  STitulo
-} from './style'
-import { adicionarUser } from '../../store/reducers/user'
 import { useState } from 'react'
+import FormularioDeCadastro from '../../components/FormularioCadastro'
+import { ContainerPadrao } from '../../style'
+import FormularioDeLogin from '../../components/FormularioLogin'
 
 const PaginaDeCadastro = () => {
-  const dispatch = useDispatch()
+  const [alteraForm, setAlteraForm] = useState(true)
 
-  const [usuario, setUsuario] = useState({ username: '', password: '' })
-
-  function SubmitUser() {
-    dispatch(adicionarUser(usuario))
+  const Muda = () => {
+    setAlteraForm(!alteraForm)
   }
 
   return (
     <ContainerPadrao>
-      <SCardLogin>
-        <STitulo>Cadastro</STitulo>
-        <SFormularioLogin>
-          <SLabelLogin>Username</SLabelLogin>
-          <SInputLogin
-            type="text"
-            required
-            autoComplete="off"
-            value={usuario.username}
-            onChange={(e) => {
-              setUsuario({ ...usuario, username: e.target.value })
-            }}
-          />
-          <SLabelLogin>Password</SLabelLogin>
-          <SInputLogin
-            type="password"
-            required
-            autoComplete="off"
-            value={usuario.password}
-            onChange={(e) => {
-              setUsuario({ ...usuario, password: e.target.value })
-            }}
-          />
-          <a href="#">já possui uma conta?</a>
-          <SButtonLogin
-            type="button"
-            onClick={() => {
-              SubmitUser()
-            }}
-          >
-            Confirmar
-          </SButtonLogin>
-        </SFormularioLogin>
-      </SCardLogin>
+      {alteraForm === true ? (
+        <FormularioDeCadastro muda={Muda} />
+      ) : (
+        <FormularioDeLogin muda={Muda} />
+      )}
     </ContainerPadrao>
   )
 }

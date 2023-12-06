@@ -40,6 +40,7 @@ export const SLabelLogin = styled.label`
   top: 0px;
   left: 8px;
   pointer-events: none;
+  margin-top: 8px;
 `
 
 export const SButtonLogin = styled.button`
@@ -59,4 +60,14 @@ export const STitulo = styled.h2``
 export const SImagemLogo = styled.img`
   height: 160px;
   width: 160px;
+`
+
+export const SLink = styled.p`
+  margin-top: 8px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+
+  &:hover {
+    scale: 0.95;
+  }
 `
