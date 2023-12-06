@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
 export const ContainerPadrao = styled.div`
-  max-width: 1920px;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   height: 100vh;
@@ -17,6 +17,7 @@ export const EstiloGlobal = createGlobalStyle`
   padding:0;
   box-sizing:border-box;
   font-family: 'Poppins', sans-serif;
+  list-style:none;
 }
 
 body{

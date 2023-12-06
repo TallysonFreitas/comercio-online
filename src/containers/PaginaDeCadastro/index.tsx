@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import FormularioDeCadastro from '../../components/FormularioCadastro'
-import { ContainerPadrao } from '../../style'
 import FormularioDeLogin from '../../components/FormularioLogin'
 
 const PaginaDeCadastro = () => {
@@ -11,13 +10,13 @@ const PaginaDeCadastro = () => {
   }
 
   return (
-    <ContainerPadrao>
+    <>
       {alteraForm === true ? (
         <FormularioDeCadastro muda={Muda} />
       ) : (
         <FormularioDeLogin muda={Muda} />
       )}
-    </ContainerPadrao>
+    </>
   )
 }
 
