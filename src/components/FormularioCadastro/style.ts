@@ -11,6 +11,7 @@ export const SCardLogin = styled.div`
   justify-content: center;
   align-items: center;
   gap: 40px;
+  margin-top: 40px;
 `
 
 export const SInputLogin = styled.input`

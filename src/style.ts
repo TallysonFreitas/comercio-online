@@ -4,10 +4,10 @@ export const ContainerPadrao = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 `
 
