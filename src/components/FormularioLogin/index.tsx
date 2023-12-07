@@ -26,7 +26,7 @@ const FormularioDeLogin = ({ muda }: any) => {
     const usuarioExiste = usuarios.find(
       (each) => each.username == usuario.username
     )
-    if (usuarioExiste?.password == usuario.password) {
+    if (usuarioExiste !== undefined) {
       dispatch(logaUser(usuario)), navigate('/home')
     } else {
       alert('senha ou username incorretos')

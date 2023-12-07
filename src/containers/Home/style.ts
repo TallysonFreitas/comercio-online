@@ -25,6 +25,8 @@ export const SNavBar = styled.ul`
       color: #fff;
       text-decoration: none;
       padding: 4px;
+      display: flex;
+      align-items: center;
     }
   }
 `
@@ -90,4 +92,9 @@ export const SImagePerfil = styled.img`
   border-radius: 50%;
   max-width: 300px;
   height: 300px;
+`
+
+export const SIcone = styled.img`
+  width: 24px;
+  height: 24px;
 `

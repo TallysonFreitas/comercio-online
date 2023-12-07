@@ -8,11 +8,13 @@ import {
   SLink,
   STitulo
 } from './style'
-import { adicionarUser } from '../../store/reducers/user'
+import { adicionarUser, logaUser } from '../../store/reducers/user'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const FormularioDeCadastro = ({ muda }: any) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [usuario, setUsuario] = useState({ username: '', password: '' })
 
@@ -25,6 +27,7 @@ const FormularioDeCadastro = ({ muda }: any) => {
           type="text"
           required
           autoComplete="off"
+          minLength={1}
           value={usuario.username}
           onChange={(e) => {
             setUsuario({ ...usuario, username: e.target.value })
@@ -35,6 +38,7 @@ const FormularioDeCadastro = ({ muda }: any) => {
           type="password"
           required
           autoComplete="off"
+          minLength={1}
           value={usuario.password}
           onChange={(e) => {
             setUsuario({ ...usuario, password: e.target.value })
@@ -44,7 +48,9 @@ const FormularioDeCadastro = ({ muda }: any) => {
         <SButtonLogin
           type="button"
           onClick={() => {
-            dispatch(adicionarUser(usuario))
+            dispatch(adicionarUser(usuario)),
+              dispatch(logaUser(usuario)),
+              navigate('/home')
           }}
         >
           Cadastrar

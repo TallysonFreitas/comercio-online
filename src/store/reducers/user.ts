@@ -2,10 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState = {
   usuarios: [
-    { username: 't', password: '1' },
-    { username: 'rafael', password: '3289' }
+    { username: 'tallyson', password: '1234' },
+    { username: 'rafael', password: '4321' }
   ],
-  usuarioAtual: {}
+  usuarioAtual: { username: '', password: '' }
 }
 
 type userType = (typeof initialState.usuarios)[0]
