@@ -20,7 +20,7 @@ const FormularioDeCadastro = ({ muda }: any) => {
     <SCardLogin>
       <STitulo>Cadastro</STitulo>
       <SFormularioLogin>
-        <SLabelLogin>Username</SLabelLogin>
+        <SLabelLogin>Crie um Username:</SLabelLogin>
         <SInputLogin
           type="text"
           required
@@ -30,7 +30,7 @@ const FormularioDeCadastro = ({ muda }: any) => {
             setUsuario({ ...usuario, username: e.target.value })
           }}
         />
-        <SLabelLogin>Password</SLabelLogin>
+        <SLabelLogin>Crie um Password:</SLabelLogin>
         <SInputLogin
           type="password"
           required

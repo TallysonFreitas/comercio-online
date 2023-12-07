@@ -8,19 +8,34 @@ import {
   SLink,
   STitulo
 } from '../FormularioCadastro/style'
-import { adicionarUser } from '../../store/reducers/user'
+import { logaUser } from '../../store/reducers/user'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+import { useNavigate } from 'react-router-dom'
 
 const FormularioDeLogin = ({ muda }: any) => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const { usuarios } = useSelector((state: RootReducer) => state.user)
 
   const [usuario, setUsuario] = useState({ username: '', password: '' })
+
+  function validaUser() {
+    const usuarioExiste = usuarios.find((each) => each == usuario)
+    if (usuarioExiste !== undefined) {
+      dispatch(logaUser(usuario)), navigate('/home')
+    } else {
+      alert('senha ou username incorretos')
+    }
+  }
 
   return (
     <SCardLogin>
       <STitulo>Login</STitulo>
       <SFormularioLogin>
-        <SLabelLogin>Crie um Username:</SLabelLogin>
+        <SLabelLogin>Username</SLabelLogin>
         <SInputLogin
           type="text"
           required
@@ -30,7 +45,7 @@ const FormularioDeLogin = ({ muda }: any) => {
             setUsuario({ ...usuario, username: e.target.value })
           }}
         />
-        <SLabelLogin>Crie um Password:</SLabelLogin>
+        <SLabelLogin>Password</SLabelLogin>
         <SInputLogin
           type="password"
           required
@@ -44,7 +59,7 @@ const FormularioDeLogin = ({ muda }: any) => {
         <SButtonLogin
           type="button"
           onClick={() => {
-            dispatch(adicionarUser(usuario))
+            validaUser()
           }}
         >
           Logar

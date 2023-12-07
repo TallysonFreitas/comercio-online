@@ -2,9 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState = {
   usuarios: [
-    { username: 'rodrigo', password: '9823' },
+    { username: 't', password: '1' },
     { username: 'rafael', password: '3289' }
-  ]
+  ],
+  usuarioAtual: {}
 }
 
 type userType = (typeof initialState.usuarios)[0]
@@ -19,9 +20,12 @@ const userSlice = createSlice({
       } else {
         state.usuarios = [action.payload]
       }
+    },
+    logaUser: (state, action: PayloadAction<userType>) => {
+      state.usuarioAtual = action.payload
     }
   }
 })
 
 export default userSlice.reducer
-export const { adicionarUser } = userSlice.actions
+export const { adicionarUser, logaUser } = userSlice.actions

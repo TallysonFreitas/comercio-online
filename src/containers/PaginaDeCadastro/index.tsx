@@ -3,7 +3,7 @@ import FormularioDeCadastro from '../../components/FormularioCadastro'
 import FormularioDeLogin from '../../components/FormularioLogin'
 
 const PaginaDeCadastro = () => {
-  const [alteraForm, setAlteraForm] = useState(true)
+  const [alteraForm, setAlteraForm] = useState(false)
 
   const Muda = () => {
     setAlteraForm(!alteraForm)
