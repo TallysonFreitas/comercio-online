@@ -23,8 +23,10 @@ const FormularioDeLogin = ({ muda }: any) => {
   const [usuario, setUsuario] = useState({ username: '', password: '' })
 
   function validaUser() {
-    const usuarioExiste = usuarios.find((each) => each == usuario)
-    if (usuarioExiste !== undefined) {
+    const usuarioExiste = usuarios.find(
+      (each) => each.username == usuario.username
+    )
+    if (usuarioExiste?.password == usuario.password) {
       dispatch(logaUser(usuario)), navigate('/home')
     } else {
       alert('senha ou username incorretos')
